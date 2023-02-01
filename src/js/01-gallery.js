@@ -21,7 +21,7 @@ const galleryPictures = galleryItems
         </a>
       </div>`;
   })
-  .join('');
+  .join('s');
 
 gallery.insertAdjacentHTML('afterbegin', galleryPictures);
 
