@@ -18,8 +18,7 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
-  const savedMessage = localStorage.getItem(STORAGE_KEY);
-  console.log(JSON.parse(savedMessage));
+  console.log(localStorage.getItem(STORAGE_KEY));
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
