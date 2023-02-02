@@ -1,10 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 // Change code below this line
-
-// Дополнительный импорт стилей
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 
@@ -24,13 +22,8 @@ const galleryPictures = galleryItems
 
 gallery.insertAdjacentHTML('afterbegin', galleryPictures);
 
-gallery.addEventListener('click', OnGalleryContainerClick);
-
-function OnGalleryContainerClick(event) {
-  event.preventDefault();
-}
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-  captionPosition: 'botton',
+  captionPosition: 'bottom',
 });
