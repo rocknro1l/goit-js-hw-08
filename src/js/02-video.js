@@ -13,6 +13,11 @@ player.on(
   }, 1000)
 );
 
-const savedTime = localStorage.getItem(STORAGE_KEY);
-
-player.setCurrentTime(savedTime);
+const setCurrentTime = () => {
+  const savedTime = localStorage.getItem(STORAGE_KEY);
+  if (savedTime) {
+    player.setCurrentTime(savedTime);
+  }
+  return;
+};
+setCurrentTime();
