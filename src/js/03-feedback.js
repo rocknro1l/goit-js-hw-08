@@ -7,7 +7,6 @@ const STORAGE_KEY = 'feedback-form-state';
 form.addEventListener('input', throttle(onDataInput, 500));
 
 const userData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-console.log(userData);
 
 function onDataInput(event) {
   userData[event.target.name] = event.target.value;
@@ -19,6 +18,11 @@ form.addEventListener('submit', onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
+
+  if (form.email.value === '' || form.message.value === '') {
+    return alert('All fields must be filled!');
+  }
+
   const savedData = localStorage.getItem(STORAGE_KEY);
   console.log(JSON.parse(savedData));
   event.currentTarget.reset();
